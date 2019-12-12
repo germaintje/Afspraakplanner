@@ -1,0 +1,57 @@
+.table {
+    width: 100%;
+}
+
+.stuur {
+    border-radius: 5px;
+    border: 1px solid transparent;
+    padding: 5px;
+    color: white;
+    background-color: #16A2E4;
+    cursor: pointer;
+}
+
+.stuurleft {
+    margin-left: -6pc;
+}
+
+.stuur:hover {
+    background-color: #1685e4;
+}
+
+.chatbox {
+    box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    padding: 10px;
+}
+
+.button {
+    border-radius: 0px 0px 5px 5px;
+    width: 100%;
+}
+
+.text-success {
+    color: #3C763D;
+}
+
+.text-danger {
+ color: #D9534F;
+}
+
+td.topline {
+border-top: 1px solid grey;
+padding: 10px 0px 10px 0px;
+}
+
+textarea {
+    display: block !important;
+}
+.emojionearea {
+    display: none;
+} 
+
+.teller {
+    background-color: #5cb85c;
+    padding: 3px;
+    border-radius: 5px 5px 5px 5px;
+    color: white;
+}

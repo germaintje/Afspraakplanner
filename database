@@ -1,0 +1,113 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Gegenereerd op: 05 jun 2019 om 10:59
+-- Serverversie: 10.1.30-MariaDB
+-- PHP-versie: 7.0.27
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Database: `afspraakplanner`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `afspraken`
+--
+
+CREATE TABLE `afspraken` (
+  `afspraak_id` int(11) NOT NULL,
+  `zzper_id` int(11) NOT NULL,
+  `klant_id` int(11) NOT NULL,
+  `datum` date DEFAULT NULL,
+  `blok_id` int(11) DEFAULT NULL,
+  `comment` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `klant`
+--
+
+CREATE TABLE `klant` (
+  `klant_id` int(11) NOT NULL,
+  `username` varchar(32) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `zzper`
+--
+
+CREATE TABLE `zzper` (
+  `zzper_id` int(11) NOT NULL,
+  `username` varchar(32) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexen voor geëxporteerde tabellen
+--
+
+--
+-- Indexen voor tabel `afspraken`
+--
+ALTER TABLE `afspraken`
+  ADD PRIMARY KEY (`afspraak_id`),
+  ADD KEY `klant_id` (`klant_id`),
+  ADD KEY `zzper_id` (`zzper_id`);
+
+--
+-- Indexen voor tabel `klant`
+--
+ALTER TABLE `klant`
+  ADD PRIMARY KEY (`klant_id`);
+
+--
+-- Indexen voor tabel `zzper`
+--
+ALTER TABLE `zzper`
+  ADD PRIMARY KEY (`zzper_id`);
+
+--
+-- AUTO_INCREMENT voor geëxporteerde tabellen
+--
+
+--
+-- AUTO_INCREMENT voor een tabel `afspraken`
+--
+ALTER TABLE `afspraken`
+  MODIFY `afspraak_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT voor een tabel `klant`
+--
+ALTER TABLE `klant`
+  MODIFY `klant_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT voor een tabel `zzper`
+--
+ALTER TABLE `zzper`
+  MODIFY `zzper_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Beperkingen voor geëxporteerde tabellen
+--
+
+--
+-- Beperkingen voor tabel `afspraken`
+--
+ALTER TABLE `afspraken`
+  ADD CONSTRAINT `afspraken_ibfk_1` FOREIGN KEY (`klant_id`) REFERENCES `klant` (`klant_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `afspraken_ibfk_2` FOREIGN KEY (`zzper_id`) REFERENCES `zzper` (`zzper_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;

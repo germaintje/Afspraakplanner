@@ -1,0 +1,38 @@
+.linetop {
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.line {
+    border: 1px solid black;
+    text-align: center;
+    padding-bottom: 10pc;
+}
+
+.scrol {
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.weekknop {
+    padding: 10px;
+    text-align: center;
+}
+
+.shadow{
+    box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    padding: 5px 0px 0px 0px !important;
+}
+
+.klanten {
+    padding: 5px 0px 5px 0px;
+}
+
+.agendatabel{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.agendatabel th {
+    background-color: lightgrey;
+}
